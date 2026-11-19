@@ -40,7 +40,7 @@ A beginner-friendly Python project that screens accounts on a fictional ticket r
 - The README is careful to say the results are "screening indicators," not proof of fraud.
 
 **What happened when I tried to run it**
-_Running results will be added here._
+I ran it with Python 3.14 using `python3 ticket_account_risk.py`, and it worked on the first try with no installs because it only uses the Python standard library. It flagged 4 risk candidates in the made-up data: `newdeal_88` matched all 4 rules, `vip_fastpass` matched 2, and `quicktransfer` and `concert_friend` matched 1 each. It also flagged 4 sellers whose followers are mostly risky accounts (`vip_fastpass`, `maple_seats`, `seat_helper`, and `quicktransfer`) and wrote two CSV files to the `output` folder for Power BI. I also ran its tests with `python3 -m unittest discover -s tests`, and all 7 tests passed. Seeing the output showed me why listing the matched rules matters: I could tell right away *why* each account was flagged, which is what I want Stan or Scam? to do for fans.
 
 **What I plan to use**
 - The "one rule = one `if` statement, append the matched rule to a list" design. Stan or Scam? will do the same thing with red-flag phrases, so every verdict comes with a list of reasons.
@@ -49,3 +49,5 @@ _Running results will be added here._
 
 **How my project is different**
 This project looks at account behavior across a whole marketplace dataset. Stan or Scam? checks the actual text of one post or DM that a fan is about to answer, and it adds a check for tickets being sold before a tour's official on-sale date.
+
+I also forked the reference project into our class organization: [ksu-is/ticket-resale-risk-screening](https://github.com/ksu-is/ticket-resale-risk-screening)
